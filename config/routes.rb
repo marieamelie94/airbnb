@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "pages#home"
   devise_for :users
   get "/pages/:page" => "pages#show"
    resources :flats, only: [:index, :show, :new, :create]

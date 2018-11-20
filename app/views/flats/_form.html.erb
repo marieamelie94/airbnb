@@ -1,16 +1,23 @@
 <div class="container">
-<%= simple_form_for(@flat) do |f| %>
-    <%= f.association :user %>
-    <%= f.input :name %>
-    <%= f.input :description, as: :text %>
-    <%= f.input :photo %>
-    <%= f.input :price %>
-    <%= f.input :type%>
-    <%= f.input :wifi, as: :check_boxes%>
-    <%= f.input :kitchen, as: :check_boxes %>
-    <%= f.input :air_conditionning, as: :check_boxes %>
-    <%= f.submit %>
-<% end %>
+  <%= simple_form_for(@flat) do |f| %>
+      <%= f.input :name, { :input_html => { :class => "form-control" } }  %>
+      <%= f.input :description, { :input_html => { :class => "form-control" }, as: :text } %>
+      <%= f.input :photo, { :input_html => { :class => "form-control" } } %>
+      <%= f.input :price, { :input_html => { :class => "form-control" } } %>
+      <%= f.input :type, { :input_html => { :class => "form-control" } } %>
+      <div class="row">
+        <div class="col-xs-6 col-md-4">
+          <%= f.input :wifi, as: :check_boxes %>
+        </div>
+        <div class="col-xs-6 col-md-4">
+          <%= f.input :kitchen, as: :check_boxes %>
+        </div>
+        <div class="col-xs-6 col-md-4">
+          <%= f.input :air_conditionning, as: :check_boxes %>
+        </div>
+      </div>
+      <%= f.submit 'Create Flat', :class => "btn btn-success btn-lg center-block" %>
+  <% end %>
 </div>_
 
 
