@@ -7,6 +7,8 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem 'cloudinary'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'devise'
 gem 'autoprefixer-rails'
