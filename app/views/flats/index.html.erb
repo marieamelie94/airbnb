@@ -1,18 +1,20 @@
-
-<% @flats.each do |f| %>
-<div class="product">
-  <div class = "product-image"><%= link_to cl_image_tag("flats/flat#{f.id}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{f.id}" %></div>
-  <div class='product-body'>
-    <h3><%=f.name.capitalize%> </h3>
-    <p><%=f.description.capitalize%></p>
-
-    <p class="product-controls"> <%= link_to "Book Flat", "/flats/#{f.id}"%></p>
-  </div>
-  <ul class="list-inline product-controls hidden-sm hidden-xs">
-    <li><%= cl_image_tag("flats/#{f.user.photo}.jpg", height: 50, width: 50, crop: :fill, radius: 50)%> </li>
-  </ul>
-</div>
-<% end %>
-
-<div>
+<div class="container">
+  <% @flats.each do |flat| %>
+    <div class="product">
+      <div class = "product-image"><%= link_to cl_image_tag("flats/flat#{flat.id}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>
+      <div class='product-body'>
+        <h3><%= flat.name.capitalize %> </h3>
+        <p><%= flat.description.capitalize if flat.description %></p>
+        <p class="product-controls">
+          <%= link_to "Book Flat", "/flats/#{flat.id}", :class => 'btn btn-primary' %>
+        </p>
+      </div>
+      <ul class="list-inline product-controls hidden-sm hidden-xs">
+        <li>
+          <%= cl_image_tag("flats/#{flat.user.photo}.jpg",
+            height: 50, width: 50, crop: :fill, radius: 50) if flat.user.photo %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
 </div>

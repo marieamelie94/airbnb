@@ -3,21 +3,17 @@
   <div class="banner-content">
     <h1>Trash Airbnb <i class="far fa-trash-alt"></i></h1>
     <p>Find the shittiest places.</p>
-
-
-    <input type="text" id="search" placeholder="Location" >
-
-
-    <input id="date" type="date" placeholder="Check-in" >
-    <input id="date" type="date" placeholder="Checkout">
-
-
-<select class="os">
-   <option value="1">super trash</option>
-   <option value="2">trash</option>
-   <option value="3">the trashiest</option>
-</select>
-    <button type="button" class="btn btn-danger">Search</a>
+    <form action="">
+      <input type="text" id="search" placeholder="Location" >
+      <input id="date" type="date" placeholder="Check-in" >
+      <input id="date" type="date" placeholder="Checkout">
+      <select class="os">
+         <option value="1">super trash</option>
+         <option value="2">trash</option>
+         <option value="3">the trashiest</option>
+      </select>
+      <%= link_to 'Search', flats_path, :class => 'btn btn-danger' %>
+    </form>
   </div>
 </div>
 
