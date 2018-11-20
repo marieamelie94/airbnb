@@ -1,15 +1,18 @@
+
 <% @flats.each do |f| %>
 <div class="product">
-  <%= cl_image_tag("flats/flat#{f.id}.jpg", height: 200, width: 300, crop: :fill) %>
+  <div class = "product-image"><%= link_to cl_image_tag("flats/flat#{f.id}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{f.id}" %></div>
   <div class='product-body'>
+    <p><%=f.user%></p>
     <h3><%=f.name.capitalize%> </h3>
     <p><%=f.description.capitalize%></p>
-    <div class="btn btn-default btn-sm"><%= link_to "See Flat", "/flats/#{f.id}"%></div>
   </div>
   <ul class="list-inline product-controls hidden-sm hidden-xs">
-    <li><div class="btn btn-default btn-sm"><%= link_to "See Flat", "/flats/#{f.id}"%></div></li>
-    <li><%=f.user%></li>
+    <li><div class="btn btn-default btn-sm"><%= link_to "Book Flat", "/flats/#{f.id}"%></div></li>
+    <li></li>
   </ul>
 </div>
 <% end %>
 
+<div>
+</div>
