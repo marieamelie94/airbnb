@@ -1,11 +1,15 @@
-
-
-<div class="rows">
-
 <% @flats.each do |f| %>
-  <div class="card col-sm-4">
-    <%= cl_image_tag("flat#{f.id}.jpg", height: 200, width: 300, crop: :fill) %>
-    <div class = "card-description"> <h2> <%= f.name.capitalize %> </h2> </div>
-     <div class="card-category btn btn-default btn-sm"><%= link_to "See", "/flats/#{f.id}"%></div>
+<div class="product">
+  <%= cl_image_tag("flats/flat#{f.id}.jpg", height: 200, width: 300, crop: :fill) %>
+  <div class='product-body'>
+    <h3><%=f.name.capitalize%> </h3>
+    <p><%=f.description.capitalize%></p>
+    <div class="btn btn-default btn-sm"><%= link_to "See Flat", "/flats/#{f.id}"%></div>
   </div>
+  <ul class="list-inline product-controls hidden-sm hidden-xs">
+    <li><div class="btn btn-default btn-sm"><%= link_to "See Flat", "/flats/#{f.id}"%></div></li>
+    <li><%=f.user%></li>
+  </ul>
+</div>
 <% end %>
+
