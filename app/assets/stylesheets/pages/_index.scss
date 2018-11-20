@@ -1,3 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "banner";
+
+.page-title {
+  text-align: center;
+  margin: 48px 0 24px 0;
+}

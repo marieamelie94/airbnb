@@ -4,24 +4,26 @@
 <div class="row">
 
   <div class="col-xs-12 col-sm-6">
-    <h3><%=@flat.name.capitalize%> </h3>
+    <h3><%= @flat.name.capitalize %></h3>
 
     <div class="flat-image">
-    <%= cl_image_tag("flats/flat#{@flat.id}.jpg", height: 400, width: 600, crop: :fill, radius: 6)%>
+    <%= cl_image_tag("flats/flat#{@flat.id}.jpg", height: 400, width: 600, crop: :fill, radius: 6) %>
     </div>
 
     <div class="col-xs-12 col-sm-6 flat-user">
-    <%= cl_image_tag("flats/#{@flat.user.photo}.jpg", height: 50, width: 50, crop: :fill, radius: 50)%>
-    <p><%=@flat.user.name%>'s flat</p>
+    <%= cl_image_tag("flats/#{@flat.user.photo}.jpg", height: 50, width: 50, crop: :fill, radius: 50) if @flat.user.photo %>
+    <p><%= @flat.user.name %>'s flat</p>
     </div>
 
   <div class="col-xs-12 col-sm-6 flat-description">
-    <p><%=@flat.description.capitalize%></p>
+    <p><%= @flat.description.capitalize if @flat.description %></p>
   </div>
 
-</div>
+  </div>
    <div class="col-xs-12 col-sm-6">
-    <h3> The booking form</h3>
+    <h3>The booking form</h3>
+
+    <%= render 'booking-form' %>
   </div>
 
 </div>

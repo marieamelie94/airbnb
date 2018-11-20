@@ -1,0 +1,18 @@
+/* -------------------------------------
+ * Your CSS code for simple_form
+* ------------------------------------- */
+
+.simple_form {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+
+  .input {
+    margin-bottom: 24px;
+
+    &.check_boxes {
+      margin-bottom: 36px;
+    }
+  }
+}
+
