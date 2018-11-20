@@ -1,0 +1,2 @@
+class BannerController < ApplicationController
+end
