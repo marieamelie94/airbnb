@@ -1,3 +1,22 @@
 <div class="panel panel-default">
   <div class="panel-body">
 
+<div class="row">
+
+  <div class="col-xs-12 col-sm-6">
+    <h3><%=@flat.name.capitalize%> </h3>
+    <%= cl_image_tag("flats/flat#{@flat.id}.jpg", height: 400, width: 600, crop: :fill, radius: 6)%>
+
+    <p><%=@flat.user%></p>
+    <p><%=@flat.description.capitalize%></p>
+  </div>
+
+  <div class="col-xs-12 col-sm-6">
+    <h3> The booking form</h3>
+  </div>
+
+</div>
+
+</div>
+
+
