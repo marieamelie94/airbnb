@@ -1,0 +1,16 @@
+<div class="container">
+<%= simple_form_for(@flat) do |f| %>
+    <%= f.association :user %>
+    <%= f.input :name %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :photo %>
+    <%= f.input :price %>
+    <%= f.input :type%>
+    <%= f.input :wifi, as: :check_boxes%>
+    <%= f.input :kitchen, as: :check_boxes %>
+    <%= f.input :air_conditionning, as: :check_boxes %>
+    <%= f.submit %>
+<% end %>
+</div>_
+
+

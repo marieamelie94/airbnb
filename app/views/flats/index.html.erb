@@ -3,13 +3,13 @@
 <div class="product">
   <div class = "product-image"><%= link_to cl_image_tag("flats/flat#{f.id}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{f.id}" %></div>
   <div class='product-body'>
-    <p><%=f.user%></p>
     <h3><%=f.name.capitalize%> </h3>
     <p><%=f.description.capitalize%></p>
+
+    <p class="product-controls"> <%= link_to "Book Flat", "/flats/#{f.id}"%></p>
   </div>
   <ul class="list-inline product-controls hidden-sm hidden-xs">
-    <li><div class="btn btn-default btn-sm"><%= link_to "Book Flat", "/flats/#{f.id}"%></div></li>
-    <li></li>
+    <li><%= cl_image_tag("flats/#{f.user.photo}.jpg", height: 50, width: 50, crop: :fill, radius: 50)%> </li>
   </ul>
 </div>
 <% end %>
