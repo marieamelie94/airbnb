@@ -3,11 +3,20 @@
     <div class="product">
       <div class = "product-image"><%= link_to cl_image_tag("flats/flat#{flat.id}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>
       <div class='product-body'>
+        <div class="col-sm-6">
         <h3><%= flat.name.capitalize %> </h3>
-        <p><%= flat.description.capitalize if flat.description %></p>
-        <p class="product-controls">
           <%= link_to "Book Flat", "/flats/#{flat.id}", :class => 'btn btn-primary' %>
+        </div>
+
+        <div class="col-sm-6">
+        <p><%= flat.description.capitalize if flat.description %></p>
+        </div>
+
+        <div class="col-sm-6">
+        <p class="product-controls">
         </p>
+      </div>
+
       </div>
       <ul class="list-inline product-controls hidden-sm hidden-xs">
         <li>

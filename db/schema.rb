@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_164703) do
+ActiveRecord::Schema.define(version: 2018_11_21_094714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,17 +29,19 @@ ActiveRecord::Schema.define(version: 2018_11_20_164703) do
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "latitude"
-    t.integer "longitude"
     t.string "photo"
     t.bigint "user_id"
     t.integer "price"
-    t.string "type"
     t.boolean "wifi"
     t.boolean "kitchen"
     t.boolean "air_conditionning"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "flat_type"
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
