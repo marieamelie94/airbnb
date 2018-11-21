@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+.home {
+  background-size: cover !important;
+  height: calc(100vh - 70px);
+
+  .home__content {
+    text-align: center;
+    padding: 48px 24px;
+  }
+
+  .home__logo .far {
+    color: grey;
+
+  }
+
+  .home__form {
+
+  }
+
+  .home__title {
+    color: #fff;
+  }
+
+  .home__details {
+    color: #fff;
+  }
+}
