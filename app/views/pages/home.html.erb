@@ -4,10 +4,10 @@
     <h1>Trash Airbnb <i class="far fa-trash-alt"></i></h1>
     <p>Find the shittiest places.</p>
     <form action="/flats">
-      <input type="text" name="location" id="search" placeholder="Location" >
-      <input id="date" name="check_in" type="date" placeholder="Check-in" >
-      <input id="date" name="check_out" type="date" placeholder="Checkout">
-      <select class="os" name="os">
+      <input type="text" name="location" id="search" placeholder="Location" value="Berlin">
+      <input id="date" name="check_in" type="date" placeholder="Check-in" value="<%= Date.today %>" >
+      <input id="date" name="check_out" type="date" placeholder="Checkout" value="<%= Date.today %>">
+      <select class="os" name="os" value="1">
          <option value="1">super trash</option>
          <option value="2">trash</option>
          <option value="3">the trashiest</option>
