@@ -2,6 +2,14 @@
 
 <div class="row">
   <div class="col-sm-6">
+
+    <div>
+      <%= params[:location] %>
+      <%= params[:check_in].to_s %>
+      <%= params[:check_out].to_s %>
+      <%= params[:os] %>
+    </div>
+
     <% @flats.each do |flat| %>
       <div class="product">
         <div class = "product-image"><%= link_to cl_image_tag("flats/#{flat.photo}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>

@@ -3,16 +3,16 @@
   <div class="banner-content">
     <h1>Trash Airbnb <i class="far fa-trash-alt"></i></h1>
     <p>Find the shittiest places.</p>
-    <form action="">
-      <input type="text" id="search" placeholder="Location" >
-      <input id="date" type="date" placeholder="Check-in" >
-      <input id="date" type="date" placeholder="Checkout">
-      <select class="os">
+    <form action="/flats">
+      <input type="text" name="location" id="search" placeholder="Location" >
+      <input id="date" name="check_in" type="date" placeholder="Check-in" >
+      <input id="date" name="check_out" type="date" placeholder="Checkout">
+      <select class="os" name="os">
          <option value="1">super trash</option>
          <option value="2">trash</option>
          <option value="3">the trashiest</option>
       </select>
-      <%= link_to 'Search', flats_path, :class => 'btn btn-danger' %>
+      <input type="submit" name="submit" class="btn btn-danger" value="Search">
     </form>
   </div>
 </div>
