@@ -18,11 +18,11 @@ if (mapElement) { // only build a map if there's a div#map to inject into
 
     markers.forEach((marker) => {
       new mapboxgl.Marker()
-        .setLngLat([marker.lng, marker.lat])
-        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-        .setHTML(marker.infoWindow.content))
-        .addTo(map);
-    })
+         .setLngLat([marker.lng, marker.lat])
+         .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+         .setHTML(marker.infoWindow.content))
+         .addTo(map);
+     })
 
     if (markers.length === 0) {
         map.setZoom(1);
@@ -37,19 +37,6 @@ if (mapElement) { // only build a map if there's a div#map to inject into
         map.fitBounds(bounds, { duration: 1000, padding: 75 })
       }
 
-    // markers.forEach((marker) => {
-    //    new mapboxgl.Marker()
-    //      .setLngLat([marker.lng, marker.lat])
-    //      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-    //      .setHTML(marker.infoWindow.content))
-    //      .addTo(map);
-    //  })
-
-
-
-
-
-
 
     map.addControl(new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
@@ -58,13 +45,9 @@ if (mapElement) { // only build a map if there's a div#map to inject into
 
 const addressInput = document.getElementById('flat_address');
 
-
-
-
-
-// if (addressInput) {
-//   const places = require('places.js');
-//   const placesAutocomplete = places({
-//     container: addressInput
-//   });
-// }
+if (addressInput) {
+  const places = require('places.js');
+  const placesAutocomplete = places({
+    container: addressInput
+  });
+}

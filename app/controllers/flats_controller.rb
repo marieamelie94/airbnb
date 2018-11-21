@@ -7,7 +7,7 @@ class FlatsController < ApplicationController
       {
         lng: flat.longitude,
         lat: flat.latitude,
-
+        infoWindow: { content: render_to_string(partial: "/flats/map_window", locals: { flat: flat })}
       }
     end
   end

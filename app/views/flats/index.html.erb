@@ -1,37 +1,48 @@
 <div class="container">
-  <% @flats.each do |flat| %>
-    <div class="product">
-      <div class = "product-image"><%= link_to cl_image_tag("flats/flat#{flat.id}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>
-      <div class='product-body'>
-        <div class="col-sm-6">
-        <h3><%= flat.name.capitalize %> </h3>
-          <%= link_to "Book Flat", "/flats/#{flat.id}", :class => 'btn btn-primary' %>
+
+<div class="row">
+  <div class="col-sm-6">
+    <% @flats.each do |flat| %>
+      <div class="product">
+        <div class = "product-image"><%= link_to cl_image_tag("flats/flat#{flat.id}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>
+        <div class='product-body'>
+          <div class="col-sm-6">
+          <h3><%= flat.name.capitalize %> </h3>
+            <%= link_to "Book Flat", "/flats/#{flat.id}", :class => 'btn btn-primary' %>
+          </div>
+
+          <div class="col-sm-6">
+          <p><%= flat.description.capitalize if flat.description %></p>
+          </div>
+
+          <div class="col-sm-6">
+          <p class="product-controls">
+          </p>
         </div>
 
-        <div class="col-sm-6">
-        <p><%= flat.description.capitalize if flat.description %></p>
         </div>
-
-        <div class="col-sm-6">
-        <p class="product-controls">
-        </p>
+        <ul class="list-inline product-controls hidden-sm hidden-xs">
+          <li>
+            <%= cl_image_tag("flats/#{flat.user.photo}.jpg",
+              height: 50, width: 50, crop: :fill, radius: 50) if flat.user.photo %>
+          </li>
+        </ul>
       </div>
-
-      </div>
-      <ul class="list-inline product-controls hidden-sm hidden-xs">
-        <li>
-          <%= cl_image_tag("flats/#{flat.user.photo}.jpg",
-            height: 50, width: 50, crop: :fill, radius: 50) if flat.user.photo %>
-        </li>
-      </ul>
-    </div>
-  <% end %>
+    <% end %>
 </div>
 
-  <div
-    id="map"
-    style="width: 50%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+  <div class="col-sm-6">
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+
+  </div>
+
+</div>
+
+</div>
+
