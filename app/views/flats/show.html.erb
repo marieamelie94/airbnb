@@ -7,7 +7,7 @@
     <h3><%= @flat.name.capitalize %></h3>
 
     <div class="flat-image">
-    <%= cl_image_tag("flats/flat#{@flat.id}.jpg", height: 400, width: 600, crop: :fill, radius: 6) %>
+    <%= cl_image_tag("flats/#{@flat.photo}.jpg", height: 400, width: 600, crop: :fill, radius: 6) %>
     </div>
 
     <div class="col-xs-12 col-sm-6 flat-user">

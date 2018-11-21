@@ -9,16 +9,17 @@
 puts "creating user"
 user = User.create!(
   name: 'Host1',
-  email: 'hodooeee@nobrain.com',
-  password: "blahah"
+  email: 'hooeee@nobrain.com',
+  password: "blahah",
+  photo: "user_1"
   )
-user_two = User.create!(name: 'Dodo', email: 'jodoooee@nobrain.com', password: "blahah")
+
 
 puts "creating flats"
 Flat.create!(name: 'Romantic shithole',
  user_id: user.id,
  description: 'Full package creep exprecience. You will never feel the same again, Spend time with our Host, he will take a breath away.',
- photo: 'https://res.cloudinary.com/mas-cloud/image/upload/v1542797858/Flats/flat1.jpg',
+ photo: 'flat1',
  price: 300,
  wifi: true,
  kitchen: true,

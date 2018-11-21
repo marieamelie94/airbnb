@@ -1,5 +1,6 @@
 <%= simple_form_for(@booking) do |f| %>
     <%= f.input :check_in %>
     <%= f.input :checkout %>
+    <%= f.association :user %>
     <%= f.submit %>
 <% end %>

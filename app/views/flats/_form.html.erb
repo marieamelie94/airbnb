@@ -2,9 +2,10 @@
   <%= simple_form_for(@flat) do |f| %>
       <%= f.input :name, { :input_html => { :class => "form-control" } }  %>
       <%= f.input :description, { :input_html => { :class => "form-control" }, as: :text } %>
+      <%= f.input :address, { :input_html => { :class => "form-control" } } %>
       <%= f.input :photo, { :input_html => { :class => "form-control" } } %>
       <%= f.input :price, { :input_html => { :class => "form-control" } } %>
-      <%= f.input :type, { :input_html => { :class => "form-control" } } %>
+      <%= f.input :category, { :input_html => { :class => "form-control" } } %>
       <div class="row">
         <div class="col-xs-6 col-md-4">
           <%= f.input :wifi, as: :check_boxes %>

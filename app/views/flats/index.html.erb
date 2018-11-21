@@ -4,7 +4,7 @@
   <div class="col-sm-6">
     <% @flats.each do |flat| %>
       <div class="product">
-        <div class = "product-image"><%= link_to cl_image_tag("flats/flat#{flat.id}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>
+        <div class = "product-image"><%= link_to cl_image_tag("flats/#{flat.photo}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>
         <div class='product-body'>
           <div class="col-sm-6">
           <h3><%= flat.name.capitalize %> </h3>
