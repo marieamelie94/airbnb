@@ -1,21 +1,34 @@
-<div class="container">
-  <form class="simple_form" action="">
-    <div class="input">
-      <label for="">First</label>
-      <input class="form-control" type="text">
-    </div>
-    <div class="input">
-      <label for="">Last name</label>
-      <input class="form-control" type="text">
-    </div>
-    <div class="input">
-      <label for="">Payment Info</label>
-      <input class="form-control" type="text">
-    </div>
-    <div class="input">
-      <button class="btn btn-lg btn-success">Book flat</button>
-    </div>
-  </form>
+<div class="booking-form">
+  <div class="container">
+    <h3 class="booking-form__title">The booking form</h3>
+    <% if user_signed_in? %>
+      <form class="booking-form__form simple_form" action="">
+        <div class="input">
+          <label for="">First</label>
+          <input class="form-control" type="text">
+        </div>
+        <div class="input">
+          <label for="">Last name</label>
+          <input class="form-control" type="text">
+        </div>
+        <div class="input">
+          <label for="">Payment Info</label>
+          <input class="form-control" type="text">
+        </div>
+        <div class="input">
+          <button class="btn btn-lg btn-success">Book flat</button>
+        </div>
+      </form>
+    <% else %>
+      <div class="booking-form__not-logged-in-info">
+        <p>You have to login to book this flat</p>
+      </div>
+      <div class="booking-form__log-in">
+        <%= link_to 'Log in', new_user_session_path, class: "btn btn-success" %>
+      </div>
+      <div class="booking-form__sign-in">
+        <%= link_to 'Create new account', new_user_registration_path, class: "" %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-
