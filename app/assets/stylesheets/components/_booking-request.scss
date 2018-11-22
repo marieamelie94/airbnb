@@ -1,0 +1,43 @@
+/* -------------------------------------
+ * Your CSS code for user booking request
+* ------------------------------------- */
+
+.booking-request {
+  display: flex;
+  padding: 8px;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 24px;
+  justify-content: space-between;
+
+  label {
+    color: #999;
+    font-weight: 400;
+    display: block;
+    font-size: 14px;
+  }
+
+  .booking-request__location,
+  .booking-request__check_in,
+  .booking-request__check_out,
+  .booking-request__os {
+    padding: 6px;
+    min-width: 100px;
+  }
+
+  .booking-request__location {
+
+  }
+
+  .booking-request__check_in {
+
+  }
+
+  .booking-request__check_out {
+
+  }
+
+  .booking-request__os {
+
+  }
+}

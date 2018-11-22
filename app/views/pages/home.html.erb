@@ -1,21 +1,26 @@
-
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://metrouk2.files.wordpress.com/2015/05/ad_169222367.jpg?quality=90&strip=all&zoom=1&resize=644%2C483');">
-  <div class="banner-content">
-    <h1>Trash Airbnb <i class="far fa-trash-alt"></i></h1>
-    <p>Find the shittiest places.</p>
-    <form action="">
-      <input type="text" id="search" placeholder="Location" >
-      <input id="date" type="date" placeholder="Check-in" >
-      <input id="date" type="date" placeholder="Checkout">
-      <select class="os">
+<div class="home" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://metrouk2.files.wordpress.com/2015/05/ad_169222367.jpg?quality=90&strip=all&zoom=1&resize=644%2C483');">
+  <div class="home__content">
+    <div class="home__logo">
+      <i class="far fa-trash-alt"></i>
+    </div>
+    <h1 class="home__title">Trashbnb</h1>
+    <p class="home__details">Find the shittiest places.</p>
+    <form class="home__form form" action="/flats">
+      <input type="text" name="location" id="search" placeholder="Location" value="Berlin">
+      <input id="date" name="check_in" type="date" placeholder="Check-in" value="<%= Date.today %>" >
+      <input id="date" name="check_out" type="date" placeholder="Checkout" value="<%= Date.today %>">
+      <select class="os" name="os" value="1">
          <option value="1">super trash</option>
          <option value="2">trash</option>
          <option value="3">the trashiest</option>
       </select>
-      <%= link_to 'Search', flats_path, :class => 'btn btn-danger' %>
+      <input type="submit" name="submit" class="btn btn-danger" value="Search">
     </form>
   </div>
 </div>
+
+
+
 
 
 

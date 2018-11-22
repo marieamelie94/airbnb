@@ -2,20 +2,40 @@
 
 <div class="row">
   <div class="col-sm-6">
+
+    <div class="booking-request">
+      <div class="booking-request__location">
+        <label for="location">Location</label>
+        <%= params[:location] %>
+      </div>
+      <div class="booking-request__check_in">
+        <label for="check_in">Check in</label>
+        <%= params[:check_in].to_time.strftime('%a %b %d %Y') %>
+      </div>
+      <div class="booking-request__check_out">
+        <label for="check_in">Check out</label>
+        <%= params[:check_out].to_time.strftime('%a %b %d %Y') %>
+      </div>
+      <div class="booking-request__os">
+        <label for="check_in">Guests</label>
+        <%= params[:os] %>
+      </div>
+    </div>
+
     <% @flats.each do |flat| %>
       <div class="product">
         <div class = "product-image"><%= link_to cl_image_tag("flats/#{flat.photo}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>
         <div class='product-body'>
-          <div class="col-sm-6">
+          <div class="">
           <h3><%= flat.name.capitalize %> </h3>
             <%= link_to "Book Flat", "/flats/#{flat.id}", :class => 'btn btn-primary' %>
           </div>
 
-          <div class="col-sm-6">
+          <div class="">
           <p><%= flat.description.capitalize if flat.description %></p>
           </div>
 
-          <div class="col-sm-6">
+          <div class="">
           <p class="product-controls">
           </p>
         </div>
@@ -24,7 +44,7 @@
         <ul class="list-inline product-controls hidden-sm hidden-xs">
           <li>
             <%= cl_image_tag("flats/#{flat.user.photo}.jpg",
-              height: 50, width: 50, crop: :fill, radius: 50) if flat.user.photo %>
+              height: 50, width: 50, crop: :fill, radius: 50, class: 'user-img') if flat.user.photo %>
           </li>
         </ul>
       </div>
