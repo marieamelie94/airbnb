@@ -3,7 +3,30 @@
 * ------------------------------------- */
 
 .booking-form {
+
+  .fa,
+  .far,
+  .fab {
+    font-size: 36px;
+    width: 80px;
+    color: blue;
+    padding: 12px;
+    margin: 0;
+  }
+
+  .booking-form__notice {
+    color: white;
+    background-color: red;
+    padding: 12px;
+  }
+
   .booking-form__sign-in {
     margin-top: 12px;
+  }
+
+  .booking-form__group {
+    height: 60px;
+    display: flex;
+    align-items: center;
   }
 }
