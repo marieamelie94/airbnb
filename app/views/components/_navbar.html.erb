@@ -8,7 +8,8 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
-      <%= link_to 'Add a flat', new_flat_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to 'Offer a flat', new_flat_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to 'Manage Bookings', user_bookings_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link") %>
       <%= link_to cl_image_tag("flats/#{current_user.photo}.jpg",
               height: 50, width: 50, crop: :fill, radius: 50, class: 'user-img'), flats_path(@user) %>

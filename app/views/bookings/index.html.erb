@@ -1,0 +1,34 @@
+
+  <h1>The places you booked</h1>
+  <% @bookings.each do |b| %>
+    <div class="product">
+      <% flat = Flat.find(b.flat_id) %>
+      <% owner = User.find(flat.user_id) %>
+
+        <div class = "product-image"><%= link_to cl_image_tag("flats/#{flat.photo}.jpg", height: 150, width: 225, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>
+        <div class='product-body'>
+          <div class="">
+          <h3><%= b.flat.name.capitalize %> </h3>
+          <h4> From <%= b.check_in%> to <%= b.checkout %></h4>
+            <%= link_to " See Flat", "/flats/#{flat.id}", :class => 'btn btn-primary' %>
+            <%= link_to " Cancel", user_booking_path(current_user, b), method: :delete, :class => 'btn btn-primary' %>
+          </div>
+
+          <div class="">
+          <!-- <p><%= flat.description.capitalize%></p> -->
+          </div>
+
+          <div class="">
+          <p class="product-controls">
+          </p>
+        </div>
+
+        </div>
+        <ul class="list-inline product-controls hidden-sm hidden-xs">
+          <li>
+            <%= cl_image_tag("flats/#{owner.photo}.jpg",
+              height: 50, width: 50, crop: :fill, radius: 50, class: 'user-img') if flat.user.photo %>
+          </li>
+        </ul>
+    </div>
+  <% end %>
