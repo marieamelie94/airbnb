@@ -15,7 +15,7 @@ user = User.create!(
   )
 
 puts "creating user"
-user = User.create!(
+user1 = User.create!(
   name: 'Host2',
   email: 'hooeee2@nobrain.com',
   password: "blahah",
@@ -23,7 +23,7 @@ user = User.create!(
   )
 
 puts "creating user"
-user = User.create!(
+user2 = User.create!(
   name: 'Host3',
   email: 'hooeee3@nobrain.com',
   password: "blahah",
@@ -47,9 +47,9 @@ Flat.create!(name: 'Romantic shithole',
 
 puts "creating flats"
 Flat.create!(name: 'Miserable cave',
- user_id: user.id,
+ user_id: user1.id,
  description: 'Full package creep exprecience. You will never feel the same again, Spend time with our Host, he will take a breath away.',
- photo: 'flat1',
+ photo: 'flat2',
  price: 300,
  wifi: true,
  kitchen: true,
@@ -61,9 +61,9 @@ Flat.create!(name: 'Miserable cave',
 
 puts "creating flats"
 Flat.create!(name: 'Smelly poopyard',
- user_id: user.id,
+ user_id: user2.id,
  description: 'Full package creep exprecience. You will never feel the same again, Spend time with our Host, he will take a breath away.',
- photo: 'flat1',
+ photo: 'flat3',
  price: 300,
  wifi: true,
  kitchen: true,

@@ -18,12 +18,15 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    @user = current_user
   end
 
   def create
-    @flat = Flat.new(cocktail_params)
+    @user = current_user
+    @flat = Flat.new(flat_params)
+    @flat.user = @user
     if @flat.save
-      redirect_to @flat
+      redirect_to flat_path(@flat)
     else
       render 'new'
     end
@@ -31,7 +34,7 @@ class FlatsController < ApplicationController
 
   private
 
-  def cocktail_params
-    params.require(:flat).permit(:name, :description, :user, :air_conditionning,:wifi, :type, :kitchen)
+  def flat_params
+    params.require(:flat).permit(:name, :description, :address, :air_conditionning, :wifi, :flat_type, :kitchen, :price, :category, :photo)
   end
 end
