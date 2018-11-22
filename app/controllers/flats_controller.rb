@@ -38,6 +38,11 @@ class FlatsController < ApplicationController
     redirect_to flats_path
   end
 
+  def user_flats
+    @user = current_user
+    @flats = Flat.where(user_id: @user)
+  end
+
   private
 
   def flat_params

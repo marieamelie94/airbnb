@@ -1,4 +1,7 @@
+<% if @bookings.empty? %>
+  <h1>You didn't book any place</h1>
 
+<% else %>
   <h1>The places you booked</h1>
   <% @bookings.each do |b| %>
     <div class="product">
@@ -32,3 +35,7 @@
         </ul>
     </div>
   <% end %>
+<% end %>
+
+
+

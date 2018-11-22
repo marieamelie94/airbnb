@@ -1,0 +1,26 @@
+<% if @flats.empty? %>
+<h3>You have no flat on offer</h3>
+
+<% else %>
+  <% @flats.each do |f| %>
+  <div class="product">
+        <div class = "product-image"><%= link_to cl_image_tag("flats/#{f.photo}.jpg", height: 150, width: 225, crop: :fill, radius: 6), "/flats/#{f.id}" %></div>
+        <div class='product-body'>
+          <div class="">
+          <h3><%= f.name.capitalize %> </h3>
+            <%= link_to " See Flat", "/flats/#{flat.id}", :class => 'btn btn-primary' %>
+          </div>
+
+          <div class="">
+          <!-- <p><%= flat.description.capitalize%></p> -->
+          </div>
+
+          <div class="">
+          <p class="product-controls">
+          </p>
+        </div>
+
+  <% end %>
+<% end %>
+
+

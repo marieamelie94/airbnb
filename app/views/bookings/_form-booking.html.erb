@@ -1,5 +1,10 @@
 <%= simple_form_for [@flat, Booking.new] do |f| %>
     <%= f.input :check_in %>
     <%= f.input :checkout %>
-    <%= f.submit %>
+    <%  if user_signed_in? %>
+        <%= f.submit %>
+    <% else %>
+        <p> <%= flash.now[:alert] = 'You need to login to book a flat' %> </p>
+        <%= link_to 'Log in', new_user_session_path, class: "btn btn-danger" %>
+    <% end %>
 <% end %>
