@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @user = current_user
     @booking.user = @user
     @booking.flat = @flat
+
     if @booking.save
       redirect_to '/pages/checkout'
     else
