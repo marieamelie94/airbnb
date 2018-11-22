@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
+  get '/pages/home' => 'pages#home'
   get '/pages/:page' => 'pages#show'
   get '/users/:user_id/flats' => 'flats#user_flats'
 
