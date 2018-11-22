@@ -1,23 +1,27 @@
 <div class="container">
   <%= simple_form_for(@flat) do |f| %>
-      <%= f.input :name, { :input_html => { :class => "form-control" } }  %>
-      <%= f.input :description, { :input_html => { :class => "form-control" }, as: :text } %>
-      <%= f.input :address, { :input_html => { :class => "form-control" } } %>
-      <%= f.input :photo, { :input_html => { :class => "form-control" } } %>
-      <%= f.input :price, { :input_html => { :class => "form-control" } } %>
-      <%= f.input :category, { :input_html => { :class => "form-control" } } %>
+
+      <%= f.input :name, error: 'Name is mandatory, be poetic', :input_html => { :class => "form-control" }   %>
+      <%= f.input :description, error: 'Tell us about your trashy place', :input_html => { :class => "form-control" }, as: :text   %>
+      <%= f.input :address, error: 'Please provide the address of the hole', :input_html => { :class => "form-control" } %>
+      <%= f.input :photo, error: 'Show us where your guest will stay', :input_html => { :class => "form-control" } %>
+      <%= f.input :price, error: 'Money money', :input_html => { :class => "form-control" } %>
+      <%= f.input :category, error: 'How trashy is it?', :input_html => { :class => "form-control" } %>
+      <%= f.input :flat_type, error: 'Room? Hole? Tipi?', :input_html => { :class => "form-control" } %>
+
       <div class="row">
         <div class="col-xs-6 col-md-4">
-          <%= f.input :wifi, as: :check_boxes %>
+          <%= f.input :wifi, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
         <div class="col-xs-6 col-md-4">
-          <%= f.input :kitchen, as: :check_boxes %>
+          <%= f.input :kitchen, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
         <div class="col-xs-6 col-md-4">
-          <%= f.input :air_conditionning, as: :check_boxes %>
+          <%= f.input :air_conditionning, as: :boolean, checked_value: true, unchecked_value: false %>
         </div>
       </div>
       <%= f.submit 'Create Flat', :class => "btn btn-success btn-lg center-block" %>
+
   <% end %>
 </div>_
 
