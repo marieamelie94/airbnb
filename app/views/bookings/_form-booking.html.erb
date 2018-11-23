@@ -24,7 +24,7 @@
           <i class="far fa-child"></i>
           <label for="slavery">Be a slave</label>
         </div>
-        <%= f.submit 'Are you sure?', class: 'btn btn-lg btn-danger' %>
+        <%= f.submit 'Are you sure?', class: 'btn btn-lg btn-danger', data: { confirm: "are you reaaaally sure?" } %>
       <% end %>
     <% else %>
       <div class="booking-form__flash">
@@ -38,7 +38,7 @@
         <%= link_to 'Log in', new_user_session_path, class: "btn btn-success" %>
       </div>
       <div class="booking-form__sign-in">
-        <%= link_to 'Create new account', new_user_registration_path, class: "" %>
+        <%= link_to 'Create new account', new_user_registration_path, class: "btn btn-success" %>
       </div>
     <% end %>
   </div>
