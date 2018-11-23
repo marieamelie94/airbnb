@@ -26,7 +26,12 @@
 
     <% @flats.each do |flat| %>
       <div class="product">
-        <div class = "product-image"><%= link_to cl_image_tag("flats/#{flat.photo}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>
+        <div class = "product-image">
+          <%= image_tag cl_image_path(flat.photo, height: 200, width: 300, crop: :fill) %>
+
+          <%#= link_to cl_image_tag("flats/#{flat.photo}.jpg", height: 200, width: 300, crop: :fill, radius: 6), "/flats/#{flat.id}" %>
+
+          </div>
         <div class='product-body'>
           <div class="">
           <h3><%= flat.name.capitalize %> </h3>
@@ -45,8 +50,9 @@
         </div>
         <ul class="list-inline product-controls hidden-sm hidden-xs">
           <li>
-            <%= cl_image_tag("flats/#{flat.user.photo}.jpg",
-              height: 50, width: 50, crop: :fill, radius: 50, class: 'user-img') if flat.user.photo %>
+            <%if flat.user.photo.present? %>
+             <%= image_tag cl_image_path(flat.user.photo, height: 50, width: 50, crop: :fill),class: 'user-img' %>
+           <% end %>
           </li>
         </ul>
       </div>

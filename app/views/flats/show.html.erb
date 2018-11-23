@@ -6,27 +6,32 @@
 
       <div class="col-xs-12 col-sm-6">
         <%= link_to "Go back to list", flats_path, :class => 'btn btn-default'%>
+        <%= link_to "Delete", flat_path(@flat), method: :delete, :class => 'btn btn-default', data: { :confirm => "Are you sure?"}  %>
         <h3><%= @flat.name.capitalize %></h3>
 
         <div class="flat-image">
-          <%= cl_image_tag("flats/#{@flat.photo}.jpg", height: 400, width: 600, crop: :fill, radius: 6) %>
-        </div>
 
-        <div class="col-xs-12 col-sm-6 flat-user">
-          <%= cl_image_tag("flats/#{@flat.user.photo}.jpg", height: 50, width: 50, crop: :fill, radius: 50) if @flat.user.photo %>
-          <p><%= @flat.user.name %>'s flat</p>
-          <p><%= @flat.price%> euros</p>
-          <p><%= @flat.category.capitalize%> flat</p>
-          <p><%= @flat.address%></p>
-          <p> <%if @flat.wifi%> Wifi <%end%></p>
-          <p><%if @flat.kitchen%> Kitchen <%end%></p>
-          <p><%if @flat.air_conditionning%> Air Conditionning <%end%></p>
+         <%= image_tag cl_image_path(@flat.photo, height: 300, width: 400, crop: :fill) %>
         </div>
+        <div class="info">
+          <div class="col-xs-12 col-sm-6 flat-user">
 
-        <div class="col-xs-12 col-sm-6 flat-description">
+            <%if @flat.user.photo.present? %>
+             <%= image_tag cl_image_path(@flat.user.photo, height: 50, width: 50, crop: :fill, radius: 50),class: 'user-img' %>
+           <% end %>
+          <p>Host:</p><p><%= @flat.user.name %>'s flat</p>
+          <p>Price:</p><p><%= @flat.price%> euros</p>
+          <p>Shittiness:</p><p><%= @flat.category.capitalize%> flat</p>
+          <p>Address:</p><p><%= @flat.address%></p>
+          <p> <%if @flat.wifi%> Wifi<%end%></p>
+          <p><%if @flat.kitchen%> Kitchen<%end%></p>
+          <p><%if @flat.air_conditionning%> Air Conditionning<%end%></p>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 flat-description">
           <p><%= @flat.description.capitalize if @flat.description %></p>
         </div>
-
+        </div>
       </div>
       <div class="col-xs-12 col-sm-6">
         <%= render 'bookings/form-booking' %>

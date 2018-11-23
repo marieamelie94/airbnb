@@ -4,7 +4,8 @@
       <%= f.input :name, error: 'Name is mandatory, be poetic', :input_html => { :class => "form-control" }   %>
       <%= f.input :description, error: 'Tell us about your trashy place', :input_html => { :class => "form-control" }, as: :text   %>
       <%= f.input :address, error: 'Please provide the address of the hole', :input_html => { :class => "form-control" } %>
-      <%= f.input :photo, error: 'Show us where your guest will stay', :input_html => { :class => "form-control" } %>
+      <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
       <%= f.input :price, error: 'Money money', :input_html => { :class => "form-control" } %>
       <%= f.input :category, error: 'How trashy is it?', :input_html => { :class => "form-control" } %>
       <%= f.input :flat_type, error: 'Room? Hole? Tipi?', :input_html => { :class => "form-control" } %>
