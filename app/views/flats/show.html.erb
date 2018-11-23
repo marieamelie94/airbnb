@@ -33,12 +33,19 @@
         </div>
         </div>
       </div>
+      <% if !@flat.user == current_user %>
       <div class="col-xs-12 col-sm-6">
         <%= render 'bookings/form-booking' %>
       </div>
+      <% else %>
+      <div>
+       <br><br><br><br><br>
+       <p>Congrats! You are a shit hole host.</p>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-check-circle"></i></p>
+     </div>
+     <% end %>
+   </div>
 
-    </div>
-
-  </div>
+ </div>
 
 
