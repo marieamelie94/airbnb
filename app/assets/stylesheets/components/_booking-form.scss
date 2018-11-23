@@ -12,12 +12,28 @@
     color: blue;
     padding: 12px;
     margin: 0;
+    font-weight: bold;
+  }
+
+  .booking-form__title {
+    margin-top: 48px;
   }
 
   .booking-form__notice {
     color: white;
     background-color: red;
     padding: 12px;
+    border-radius: 4px;
+    margin-top: 24px;
+    font-weight: bold;
+  }
+
+  .booking-form__check-in,
+  .booking-form__checkout {
+    margin-top: 24px;
+    max-width: 120px;
+    display: inline-block;
+    margin-left: 12px;
   }
 
   .booking-form__sign-in {
@@ -30,3 +46,4 @@
     align-items: center;
   }
 }
+

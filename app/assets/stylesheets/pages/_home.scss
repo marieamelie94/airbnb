@@ -8,13 +8,28 @@
     padding: 48px 24px;
   }
 
-  .home__logo .far {
-    color: grey;
-
+  .home__logo {
+    background: white;
+    width: 160px;
+    margin: 0 auto;
+    padding: 12px;
+    border-radius: 80px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .home__form {
+    display: flex;
+    max-width: 960px;
+    margin: 0 auto;
 
+    .btn,
+    .form-control {
+      margin: 0 6px;
+      border-radius: 4px;
+    }
   }
 
   .home__title {
