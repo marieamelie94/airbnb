@@ -1,0 +1,16 @@
+<div class="profile">
+  <% user = current_user %>
+    <%= cl_image_tag("flats/#{user.photo}.jpg", height: 200, width: 250, crop: :fill, radius: 50) if user.photo %>
+    <h1>Frank Pervertmann</h1>
+    <h2>Host</h2>
+    <p> I love cats <i class="fas fa-heart"></i> <i class="fas fa-heart"></i> <i class="fas fa-heart"></i></p>
+
+    <p>-----</p>
+   <div class="social">
+
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+
+  </div>
+</div>

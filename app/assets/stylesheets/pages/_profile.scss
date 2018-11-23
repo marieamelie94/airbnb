@@ -1,0 +1,67 @@
+
+
+a {
+  text-decoration: none;
+}
+
+a.hover {
+  color: #EDB6A3 ;
+}
+
+.profile {
+  border-radius: 50%;
+  display: block;
+  text-align: center
+}
+
+.social {
+  list-style: none;
+  align-items:center;
+  letter-spacing: 10px;
+}
+
+#pro {
+
+  max-width: 250px;
+  max-height: 200px;
+}
+.fa-heart{
+color: red;
+}
+// .heart {
+//   position: relative;
+//   width: 100px;
+//   height: 90px;
+//   float: left;
+
+
+// width: 100px;
+//   height: 90px;
+//   overflow: hidden;
+// }
+
+// .heart.right {
+//     left: auto;
+//     right: 0;
+// }
+
+// .heart:before,
+// .heart:after {
+//   position: absolute;
+//   content: '';
+//   left: 50px;
+//   top: 0;
+//   width: 50px;
+//   height: 80px;
+//   background: #fc2e5a;
+//   border-radius: 50px 50px 0 0;
+//   transform: rotate(-45deg);
+//   transform-origin: 0 100%;
+
+// }
+
+// .heart:after {
+//   left: 0;
+//   transform: rotate(45deg);
+//   transform-origin: 100% 100%;
+// }
