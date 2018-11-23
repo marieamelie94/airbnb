@@ -8,7 +8,9 @@
       <% flat = Flat.find(b.flat_id) %>
       <% owner = User.find(flat.user_id) %>
 
-        <div class = "product-image"><%= link_to cl_image_tag("flats/#{flat.photo}.jpg", height: 150, width: 225, crop: :fill, radius: 6), "/flats/#{flat.id}" %></div>
+        <div class = "product-image">
+          <%#= raise %>
+          <%= image_tag cl_image_path(flat.photo, height: 150, width: 225, crop: :fill, radius: 6) %></div>
         <div class='product-body'>
           <div class="">
           <h3><%= b.flat.name.capitalize %> </h3>
@@ -29,7 +31,7 @@
         </div>
         <ul class="list-inline product-controls hidden-sm hidden-xs">
           <li>
-            <%= cl_image_tag("flats/#{owner.photo}.jpg",
+            <%= cl_image_tag(owner.photo,
               height: 50, width: 50, crop: :fill, radius: 50, class: 'user-img') if flat.user.photo %>
           </li>
         </ul>
