@@ -6,8 +6,8 @@
     <% if user_signed_in? %>
 
       <%= simple_form_for [@flat, Booking.new] do |f| %>
-        <%= f.input :check_in %>
-        <%= f.input :checkout %>
+        <%= f.input :check_in, :input_html => { :class => "booking-form__check-in form-control" } %>
+        <%= f.input :checkout, :input_html => { :class => "booking-form__checkout form-control" } %>
         <p>Select payment option:</p>
         <div class="booking-form__group">
           <input type="radio" name="payment-option" value="cash" checked>
